@@ -23,8 +23,30 @@ functions:
     events:
       - http:
           method: get
-          path: hello
+          path: findOne
     package:
       include:
         - functions/findone/**
+        - includes/utils.js
+
+  findtoprated:
+    handler: functions/findtoprated/findtoprated.findtoprated
+    events:
+      - http:
+          method: get
+          path: findTopRated
+    package:
+      include:
+        - functions/findtoprated/**
+        - includes/utils.js
+
+  vote:
+    handler: functions/vote/vote.vote
+    events:
+      - http:
+          method: get
+          path: vote
+    package:
+      include:
+        - functions/vote/**
         - includes/utils.js

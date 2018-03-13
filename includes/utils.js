@@ -1,12 +1,9 @@
 'use strict';
 
-module.exports.sayhello = (input) => {
+module.exports.resolve = (input) => {
   const response = {
     statusCode: 200,
-    body: JSON.stringify({
-      message: 'Go Serverless v1.0! Your function executed successfully!',
-      input: input,
-    }),
+    body: JSON.stringify(input)
   };
 
   return response;
