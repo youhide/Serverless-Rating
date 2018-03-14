@@ -1,6 +1,6 @@
 'use strict';
 
-const utils = require("../../includes/utils.js");
+const utils = require('../../includes/utils.js');
 const config = require('../../includes/config.json');
 const mysql = require('../../node_modules/mysql');
 
