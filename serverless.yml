@@ -28,6 +28,7 @@ functions:
       include:
         - functions/findone/**
         - includes/utils.js
+        - includes/config.json
 
   findtoprated:
     handler: functions/findtoprated/findtoprated.findtoprated
@@ -39,6 +40,7 @@ functions:
       include:
         - functions/findtoprated/**
         - includes/utils.js
+        - includes/config.json
 
   vote:
     handler: functions/vote/vote.vote
@@ -50,3 +52,4 @@ functions:
       include:
         - functions/vote/**
         - includes/utils.js
+        - includes/config.json

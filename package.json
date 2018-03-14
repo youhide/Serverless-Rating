@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/AltoAstral/JB-API#readme",
   "dependencies": {
-    "bluebird": "^3.5.1",
     "mysql": "^2.15.0"
   }
 }

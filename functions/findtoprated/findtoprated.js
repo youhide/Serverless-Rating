@@ -1,14 +1,14 @@
 'use strict';
 
 const utils = require("../../includes/utils.js");
+const config = require('../../includes/config.json');
 const mysql = require('../../node_modules/mysql');
-const P = require('../../node_modules/bluebird');
 
 let pool = mysql.createPool({
-  host: 'webwidgets.cyejoztggjbv.us-east-1.rds.amazonaws.com',
-  user: 'widgetsuser',
-  password: 'XKmUB4xBLbZsL4rQ',
-  database: 'webwidgets'
+  host: config.database.host,
+  user: config.database.user,
+  password: config.database.password,
+  database: config.database.database
 });
 
 module.exports.findtoprated = (event, context, callback) => {
