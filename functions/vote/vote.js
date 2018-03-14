@@ -1,11 +1,5 @@
 'use strict';
 
-// MySQL.create:  INSERT INTO `gceval` (`postid`, `stars`, `ip`, `createdAt`)
-//                 values (1651, 5, '000.000.000.000', '2018-03-13 19:26:08')
-
-// new Date().toLocaleString("pt-BR", {timeZone: "America/Sao_Paulo"})
-// new Date().toISOString().slice(0, 19).replace('T', ' ');
-
 const utils = require('../../includes/utils.js');
 const config = require('../../includes/config.json');
 const mysql = require('../../node_modules/mysql');

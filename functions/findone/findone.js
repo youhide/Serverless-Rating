@@ -1,10 +1,5 @@
 'use strict';
 
-// MYSQL.find:  SELECT AVG(`gceval`.`stars`) AS stars
-//               FROM `gceval` AS `gceval`  WHERE `gceval`.`postid` = "24505"
-// MYSQL.count:  SELECT COUNT(*) as count
-//               FROM (SELECT * FROM `gceval` WHERE `gceval`.`postid` = "24505" ) AS `gceval`
-
 const utils = require('../../includes/utils.js');
 const config = require('../../includes/config.json');
 const mysql = require('../../node_modules/mysql');
