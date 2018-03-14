@@ -4,12 +4,7 @@ const utils = require('../../includes/utils.js');
 const config = require('../../includes/config.json');
 const mysql = require('../../node_modules/mysql');
 
-let pool = mysql.createPool({
-  host: config.database.host,
-  user: config.database.user,
-  password: config.database.password,
-  database: config.database.database
-});
+let pool = mysql.createPool(config.database);
 
 module.exports.findtoprated = (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false;
