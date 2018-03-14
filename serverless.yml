@@ -46,7 +46,7 @@ functions:
     handler: functions/vote/vote.vote
     events:
       - http:
-          method: get
+          method: post
           path: vote
     package:
       include:

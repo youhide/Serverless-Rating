@@ -3,6 +3,6 @@
     "host": "webwidgets.cyejoztggjbv.us-east-1.rds.amazonaws.com",
     "user": "widgetsuser",
     "password": "XKmUB4xBLbZsL4rQ",
-    "database": "webwidgets"    
+    "database": "webwidgets-dev"    
   }
 }
