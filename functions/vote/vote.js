@@ -11,12 +11,9 @@ module.exports.vote = (event, context, callback) => {
 
   const body = JSON.parse(event.body);
 
-  pool.getConnection(function(err, connection) {
-    connection.query("INSERT INTO `gceval` (`postid`, `stars`, `ip`, `createdAt`) values (" + body.postid + ", " + body.stars + ", '" + body.ip + "', CONVERT_TZ(NOW(),'SYSTEM','America/Sao_Paulo'))", function (error, results, fields) {
-      connection.release();
-      if (error) callback(error);
-      else callback(null, utils.resolve(results));
-    });
+  pool.query("INSERT INTO `gceval` (`postid`, `stars`, `ip`, `createdAt`) values (" + body.postid + ", " + body.stars + ", '" + body.ip + "', CONVERT_TZ(NOW(),'SYSTEM','America/Sao_Paulo'))", function (error, results, fields) {
+    if (error) callback(error);
+    else callback(null, utils.resolve(results));
   });
 
 };

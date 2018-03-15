@@ -11,23 +11,20 @@ module.exports.findone = (event, context, callback) => {
 
   let obj = {};
 
-  pool.getConnection(function(err, connection) {
-    connection.query("SELECT COUNT(*) as count FROM (SELECT * FROM `gceval` WHERE `gceval`.`postid` = " + event.queryStringParameters.id + " ) AS `gceval`", function (error, results, fields) {
-      if (error) {
-        callback(error);
-      } else {
-        obj.total = results[0].count;
-        connection.query("SELECT AVG(`gceval`.`stars`) AS stars FROM `gceval` AS `gceval`  WHERE `gceval`.`postid` = " + event.queryStringParameters.id + "", function (error, results, fields) {
-          connection.release();
-          if (error) {
-            callback(error);
-          } else {
-            obj.stars = results[0].stars;
-            callback(null, utils.resolve(obj));
-          }
-        });
-      }
-    });
+  pool.query("SELECT COUNT(*) as count FROM (SELECT * FROM `gceval` WHERE `gceval`.`postid` = " + event.queryStringParameters.id + " ) AS `gceval`", function (error, results, fields) {
+    if (error) {
+      callback(error);
+    } else {
+      obj.total = results[0].count;
+      pool.query("SELECT AVG(`gceval`.`stars`) AS stars FROM `gceval` AS `gceval`  WHERE `gceval`.`postid` = " + event.queryStringParameters.id + "", function (error, results, fields) {
+        if (error) {
+          callback(error);
+        } else {
+          obj.stars = results[0].stars;
+          callback(null, utils.resolve(obj));
+        }
+      });
+    }
   });
 
 };
