@@ -65,3 +65,16 @@ functions:
         - functions/vote/**
         - includes/utils.js
         - includes/config.json
+
+resources:
+  Resources:
+    ApiGatewayMethodFindoneIdVarGet:
+      Properties:
+        RequestParameters:
+          method.request.path.id : true
+        Integration:
+          RequestParameters:
+            integration.request.path.id: method.request.path.id
+          CacheNamespace: ApiGatewayMethodFindoneIdVarGet
+          CacheKeyParameters:
+            - method.request.path.id
