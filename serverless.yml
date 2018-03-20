@@ -34,8 +34,8 @@ functions:
     handler: functions/findbulk/findbulk.findbulk
     events:
       - http:
-          method: post
-          path: findBulk
+          method: get
+          path: findBulk/{ids}
     package:
       include:
         - functions/findbulk/**
@@ -78,3 +78,13 @@ resources:
           CacheNamespace: ApiGatewayMethodFindoneIdVarGet
           CacheKeyParameters:
             - method.request.path.id
+    ApiGatewayMethodFindbulkIdsVarGet:
+      Properties:
+        RequestParameters:
+          method.request.path.ids : true
+        Integration:
+          RequestParameters:
+            integration.request.path.ids: method.request.path.ids
+          CacheNamespace: ApiGatewayMethodFindbulkIdsVarGet
+          CacheKeyParameters:
+            - method.request.path.ids        
