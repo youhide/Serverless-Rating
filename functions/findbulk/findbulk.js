@@ -11,9 +11,9 @@ module.exports.findbulk = (event, context, callback) => {
 
   let obj = {};
   let counter = 0;
-  const body = event.pathParameters.ids;
+  const body = event.pathParameters !== null ? event.pathParameters : JSON.parse(event.body);
   //const body = JSON.parse(event.body);
-  const theBulk = body.split(',');
+  const theBulk = body.ids.split(',');
 
   theBulk.forEach(function(id){
     obj[id] = {};
