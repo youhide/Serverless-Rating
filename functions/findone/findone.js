@@ -9,14 +9,16 @@ let pool = mysql.createPool(config.database);
 module.exports.findone = (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false;
 
+  const theID = event.pathParameters.id;
+
   let obj = {};
 
-  pool.query("SELECT COUNT(*) as count FROM (SELECT * FROM `gceval` WHERE `gceval`.`postid` = " + event.queryStringParameters.id + " ) AS `gceval`", function (error, results, fields) {
+  pool.query("SELECT COUNT(*) as count FROM (SELECT * FROM `gceval` WHERE `gceval`.`postid` = " + theID + " ) AS `gceval`", function (error, results, fields) {
     if (error) {
       callback(error);
     } else {
       obj.total = results[0].count;
-      pool.query("SELECT AVG(`gceval`.`stars`) AS stars FROM `gceval` AS `gceval`  WHERE `gceval`.`postid` = " + event.queryStringParameters.id + "", function (error, results, fields) {
+      pool.query("SELECT AVG(`gceval`.`stars`) AS stars FROM `gceval` AS `gceval`  WHERE `gceval`.`postid` = " + theID + "", function (error, results, fields) {
         if (error) {
           callback(error);
         } else {

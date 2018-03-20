@@ -23,7 +23,7 @@ functions:
     events:
       - http:
           method: get
-          path: findOne
+          path: findOne/{id}
     package:
       include:
         - functions/findone/**
