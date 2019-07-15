@@ -1,21 +1,21 @@
 {
-  "name": "gdc-rating",
+  "name": "serverless-rating",
   "version": "0.0.1",
-  "description": "Serverless API",
+  "description": "Serverless Rating API",
   "main": "includes/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AltoAstral/JB-API.git"
+    "url": "git+https://github.com/youhide/Serverless-Rating.git"
   },
   "author": "Youri T. K. K. Mattar",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AltoAstral/JB-API/issues"
+    "url": "https://github.com/youhide/Serverless-Rating/issues"
   },
-  "homepage": "https://github.com/AltoAstral/JB-API#readme",
+  "homepage": "https://github.com/youhide/Serverless-Rating#readme",
   "dependencies": {
     "mysql": "^2.15.0"
   }

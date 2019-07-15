@@ -1,4 +1,4 @@
-service: gdc-rating
+service: serverless-rating
 
 stage: dev
 region: us-east-1
